@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { render } from 'react-dom'
 
 const App = () => <h1>Parcel Bundler with React</h1>
