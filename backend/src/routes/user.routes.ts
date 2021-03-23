@@ -18,6 +18,21 @@ userRouter.get('/users', async (req: Request, res:Response): Promise<Response> =
     }
 });
 
+userRouter.get('/user/:id', async (req: Request, res: Response): Promise<Response> => {
+    const {id} = req.params;
+    try{
+        const user = await User.findOne({_id: id});
+        if(!user){
+            return res.status(400).json({error:"User not found"});
+        }
+
+        return res.status(200).json({user});
+    }
+    catch (err) {
+        return res.status(500).json({error: "Internal server error"});
+    }
+})
+
 userRouter.post('/register', async (req: Request, res: Response): Promise<Response> => {
     const {email, name, password} = req.body
     try {
@@ -58,7 +73,7 @@ userRouter.post('/login', async (req: Request, res: Response): Promise<Response>
         return res.status(403).json({error: "Wrong password"});
     }
     catch (err){
-        return res.status(500).json({error: err});
+        return res.status(500).json({error: "Internal server error"});
     }
 });
 
