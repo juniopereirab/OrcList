@@ -1,6 +1,6 @@
 import { Document, Schema, model } from 'mongoose';
 
-interface ITask extends Document {
+export interface ITask extends Document {
     title: string;
     description: string;
     timer?: number;

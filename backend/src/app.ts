@@ -2,8 +2,8 @@ require('dotenv').config({path: __dirname+'/.env'});
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import {taskRouter} from './routes/task.routes';
 import {userRouter} from './routes/user.routes';
+import {listRouter} from './routes/list.routes';
 
 const app = express();
 
@@ -24,7 +24,7 @@ mongoose.connect(`mongodb://orclist_db:27017/Orclist`, {
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
-app.use(taskRouter);
 app.use(userRouter);
+app.use(listRouter);
 
 export default app;

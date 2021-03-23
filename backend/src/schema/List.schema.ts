@@ -5,7 +5,7 @@ import { IUser } from './User.schema';
 interface IList extends Document {
     title: string;
     owner: IUser;
-    tasks: Array<ITask>;
+    tasks: [ITask];
 }
 
 const listSchema = new Schema<IList>({
