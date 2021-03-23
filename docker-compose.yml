@@ -25,3 +25,16 @@ services:
         - '5050:5050'
       depends_on: 
         - db
+
+  frontend:
+      container_name: orclist_frontend
+      command: yarn start
+      build:
+        context: ./frontend
+        dockerfile: Dockerfile
+      volumes:
+        - ./frontend:/frontend
+      ports:
+        - '3000:3000'
+      depends_on: 
+        - backend 
