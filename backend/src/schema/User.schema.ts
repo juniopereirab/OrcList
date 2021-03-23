@@ -6,7 +6,6 @@ interface IUser extends Document {
     email: string;
     password: string;
     profile_pic?: string;
-    comparePassword: (password: string) => Promise<boolean>;
 }
 
 const userSchema = new Schema <IUser> ({
@@ -37,10 +36,6 @@ userSchema.pre<IUser>('save', async function pre(next){
     user.password = hash;
     return next();
 });
-
-userSchema.methods.comparePassword = function ComparePassword(password: string): Promise<boolean> {
-    return bcrypt.compare(password, this.password);
-};
 
 userSchema.set('timestamps', true);
 
