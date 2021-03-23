@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express';
 import { Task } from '../schema/Task.schema';
 
-const router = Router();
+const taskRouter = Router();
 
-router.post('/newTask', async (req: Request, res: Response) => {
+taskRouter.post('/newTask', async (req: Request, res: Response) => {
     const { title } = req.body;
     try{
         const newTask = await Task.create({title});
@@ -15,7 +15,7 @@ router.post('/newTask', async (req: Request, res: Response) => {
     }
 });
 
-router.get('/all', async (req: Request, res: Response) => {
+taskRouter.get('/all', async (req: Request, res: Response) => {
     try{
         const tasks = await Task.find();
 
@@ -26,4 +26,4 @@ router.get('/all', async (req: Request, res: Response) => {
     }
 })
 
-export { router };  
+export { taskRouter };  
