@@ -1,9 +1,29 @@
 import { Request, Response, Router } from 'express';
+import { Task } from '../schema/Task.schema';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.send("Eh isso menozada");
+router.post('/newTask', async (req: Request, res: Response) => {
+    const { title } = req.body;
+    try{
+        const newTask = await Task.create({title});
+
+        return res.status(201).json({newTask});
+    }
+    catch(err){
+        return res.status(400).json({error: err});
+    }
 });
 
-export { router };
+router.get('/all', async (req: Request, res: Response) => {
+    try{
+        const tasks = await Task.find();
+
+        return res.status(200).json({tasks});
+    }
+    catch(err){
+        return res.status(400).json({error: err});
+    }
+})
+
+export { router };  
