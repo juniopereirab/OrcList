@@ -1,11 +1,9 @@
 import { Document, Schema, model} from 'mongoose';
-import { ITask } from './Task.schema';
-import { IUser } from './User.schema';
 
 interface IList extends Document {
     title: string;
-    owner: IUser;
-    tasks: [ITask];
+    owner: string;
+    tasks: Array<string>;
 }
 
 const listSchema = new Schema<IList>({

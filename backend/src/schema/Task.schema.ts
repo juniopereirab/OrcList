@@ -3,6 +3,7 @@ import { Document, Schema, model } from 'mongoose';
 export interface ITask extends Document {
     title: string;
     description: string;
+    done: Boolean;
     timer?: number;
 }
 
@@ -15,6 +16,11 @@ const taskSchema = new Schema <ITask> ({
         type: String,
         required: false,
         default: ""
+    },
+    done: {
+        type: Boolean,
+        required: false,
+        default: false
     },
     timer: {
         type: Number,
