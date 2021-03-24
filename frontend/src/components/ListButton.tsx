@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import check from '../assets/check.svg';
 import garbage from '../assets/garbage.svg';
 

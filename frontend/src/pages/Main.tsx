@@ -11,7 +11,7 @@ const Main: React.FC = () => {
           <div className="mainHeader">
             <Orclist />
             <div className="profile">
-                <img src="https://cdn.fastly.picmonkey.com/contentful/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=800&q=70" />
+                <img alt="mock" src="https://cdn.fastly.picmonkey.com/contentful/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=800&q=70" />
                 <h2>Nome Pessoa</h2>
             </div>
           </div>
@@ -25,6 +25,121 @@ const Main: React.FC = () => {
                     </div>
                 </div>
                 <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                </div>
+            </List>
+            <List>
+                <div className="listHeader">
+                    <span>Titulo da Lista</span>
+                    <div className="listHeaderButtons">
+                        <CompleteButton/>
+                        <DeleteButton />
+                    </div>
+                </div>
+                <div className="taskContainer">
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
                     <TaskCard title={"Titulo da tarefa"} description="kappa"/>
                 </div>
             </List>

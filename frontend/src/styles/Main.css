@@ -1,3 +1,68 @@
+.Main {
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.mainHeader {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+}
+
+.profile {
+    display: flex;
+    width: 50vw;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.profile img {
+    width: 20rem;
+    clip-path: circle(40%);
+}
+
+.profile h2 {
+    font-family: 'Bungee', 'cursive';
+    font-size: 4rem;
+}
+
+.listContainer {
+    display: inline-flex;
+    height: 70vh;
+    position: relative;
+    top: 30vh;
+}
+
+.listHeader {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.listHeader .listHeaderButtons {
+    width: 7rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listHeader span{
+    width: 11rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.taskContainer {
+    display: inline-flex;
+    width: 22rem;
+    height: 62vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
 @media (max-width: 1000px) {
     .Main {
         height: 100vh;
@@ -7,6 +72,10 @@
     .mainHeader {
         width: 100vw;
         height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         position: fixed;
         top: 0;
@@ -61,8 +130,5 @@
         flex-direction: column;
         align-items: center;
         overflow-y: scroll;
-    }
-    .testingTask {
-        
     }
 }
