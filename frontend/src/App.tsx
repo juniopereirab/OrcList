@@ -1,7 +1,12 @@
 import './App.css';
+import LoginButton from './components/LoginButton';
 
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div className="App">
+      <LoginButton>Login</LoginButton>
+    </div>
+  );
 }
 
 export default App;
