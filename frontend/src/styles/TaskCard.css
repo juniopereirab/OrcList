@@ -1,0 +1,14 @@
+.taskContent {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.taskContent .taskInfo {
+    width: 80%;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

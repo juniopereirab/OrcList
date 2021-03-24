@@ -5,10 +5,29 @@
     }
     
     .mainHeader {
+        width: 100vw;
         height: 30vh;
         text-align: center;
         position: fixed;
         top: 0;
+        margin-top: 10px
+    }
+
+    .profile {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile img {
+        width: 10rem;
+        clip-path: circle(40%);
+    }
+
+    .profile h2 {
+        font-family: 'Bungee', 'cursive';
+        font-size: 1.5rem;
     }
 
     .listContainer {
@@ -16,32 +35,20 @@
         height: 70vh;
         position: relative;
         top: 30vh;
-        background: aquamarine;
     }
-
-    .testingList {
-        display: inline-table;
-        position: relative;
-        top: 10px;
-        margin: 5px;
-        width: 22rem;
-        height: 100vh;
-        background: tomato;
-    }
-
-    .testingList .listHeader {
+    .listHeader {
         display: flex;
         justify-content: space-around;
         margin-top: 15px;
     }
     
-    .testingList .listHeader .listHeaderButtons {
+    .listHeader .listHeaderButtons {
         width: 7rem;
         display: flex;
         justify-content: space-around;
     }
     
-    .testingList .listHeader span{
+    .listHeader span{
         width: 11rem;
         font-weight: bold;
         font-size: 1.5rem;
@@ -56,10 +63,6 @@
         overflow-y: scroll;
     }
     .testingTask {
-        display: inline-table;
-        width: 20rem;
-        height: 5rem;
-        margin: 5px;
-        background: black;
+        
     }
 }
