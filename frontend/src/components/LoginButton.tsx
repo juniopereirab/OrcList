@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-interface ButtonProps {
-    readonly primary?: boolean;
-}
-
-const Button = styled.button<ButtonProps>`
+const Button = styled.button`
     width: 12rem;
     height: 3.5rem;
     background: #F5F2D2;
@@ -16,6 +12,7 @@ const Button = styled.button<ButtonProps>`
     font-size: 18px;
     font-family: 'Bungee', 'cursive';
     box-shadow: 4px 4px 10px rgba(0,0,0,.5);
+    margin: 20px 0;
     transition: all .2s;
     &:hover {
         box-shadow: 1px 1px 5px rgba(0,0,0,.2);
