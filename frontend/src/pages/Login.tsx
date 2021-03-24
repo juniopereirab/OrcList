@@ -3,6 +3,7 @@ import LoginInput from '../components/LoginInput';
 import LoginButton from '../components/LoginButton';
 import Orclist from '../components/OrcList';
 import LoginBackground from '../components/LoginBackground';
+import '../styles/Login.css';
 
 const Login: React.FC = () => {
   return(

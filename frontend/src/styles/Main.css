@@ -1,0 +1,65 @@
+@media (max-width: 1000px) {
+    .Main {
+        height: 100vh;
+        overflow-x: scroll;
+    }
+    
+    .mainHeader {
+        height: 30vh;
+        text-align: center;
+        position: fixed;
+        top: 0;
+    }
+
+    .listContainer {
+        display: inline-flex;
+        height: 70vh;
+        position: relative;
+        top: 30vh;
+        background: aquamarine;
+    }
+
+    .testingList {
+        display: inline-table;
+        position: relative;
+        top: 10px;
+        margin: 5px;
+        width: 22rem;
+        height: 100vh;
+        background: tomato;
+    }
+
+    .testingList .listHeader {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+    }
+    
+    .testingList .listHeader .listHeaderButtons {
+        width: 7rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .testingList .listHeader span{
+        width: 11rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .taskContainer {
+        display: inline-flex;
+        width: 22rem;
+        height: 62vh;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+    }
+    .testingTask {
+        display: inline-table;
+        width: 20rem;
+        height: 5rem;
+        margin: 5px;
+        background: black;
+    }
+}
