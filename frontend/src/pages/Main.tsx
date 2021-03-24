@@ -2,6 +2,7 @@ import React from 'react';
 import List from '../components/List';
 import TaskCard from '../components/TaskCard';
 import Orclist from '../components/OrcList';
+import {DeleteButton, CompleteButton} from '../components/ListButton';
 import '../styles/Main.css';
 
 const Main: React.FC = () => {
@@ -19,19 +20,12 @@ const Main: React.FC = () => {
                 <div className="listHeader">
                     <span>Titulo da Lista</span>
                     <div className="listHeaderButtons">
-                        <button>+</button>
-                        <button>-</button>
+                        <CompleteButton/>
+                        <DeleteButton />
                     </div>
                 </div>
                 <div className="taskContainer">
-                    <TaskCard/>
-                    <TaskCard/>
-                    <TaskCard/>
-                    <TaskCard/>
-                    <TaskCard/>
-                    <TaskCard/>
-                    <TaskCard/>
-                    <TaskCard/>
+                    <TaskCard title={"Titulo da tarefa"} description="kappa"/>
                 </div>
             </List>
           </div>
