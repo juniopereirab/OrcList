@@ -1,6 +1,6 @@
 h1.OrcTitle {
     font-family: 'Bungee', 'cursive';
-    font-size: 4rem;
+    font-size: 7rem;
     color: #5A8D38;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #000;
@@ -8,4 +8,11 @@ h1.OrcTitle {
 
 span.OrcTitle {
     color: #F8F3B7;
+    font-family: 'Bungee', 'cursive';
+}
+
+@media (max-width: 1000px) {
+    h1.OrcTitle {
+        font-size: 4rem;
+    }
 }

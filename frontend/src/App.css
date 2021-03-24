@@ -6,3 +6,30 @@
     justify-content: center;
     align-items: center;
 }
+
+.titleOrcList {
+    position: absolute;
+    top: 0;
+    margin: 50px 0 0 0;
+    width: 50%;
+    text-align: center;
+}
+
+label#inputLabel {
+    width: 19rem;
+    font-family: 'Bungee', 'cursive';
+    margin: 2px 0;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0 0 0;   
+}
+
+@media (max-width: 1000px) {
+    .titleOrcList {
+        width: 20rem;
+    }
+}
