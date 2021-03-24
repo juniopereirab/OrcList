@@ -11,5 +11,4 @@ const Input = styled.input`
     margin: 0.2rem 0; 
 `
 
-
 export default Input;
