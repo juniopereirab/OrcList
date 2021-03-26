@@ -15,6 +15,12 @@ export const login = async (email: string, password: string) => {
     return response;
 }
 
+export const register = async (data: FormData) => {
+    const response = await api.post('/register', data);
+    console.log(response);
+    return response;
+}
+
 export const getCurrentUser = () => {
     const user: any = localStorage.getItem('@orclist/user_info');
     console.log(JSON.parse(user));

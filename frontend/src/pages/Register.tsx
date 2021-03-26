@@ -1,11 +1,14 @@
 import React, {useState, useMemo} from 'react';
+import {useHistory} from 'react-router-dom';
 import LoginInput from '../components/LoginInput';
 import LoginButton from '../components/LoginButton';
 import LoginBackground from '../components/LoginBackground';
 import '../styles/Register.css';
 import userPic from '../assets/user.svg';
+import {register} from '../services/auth';
 
 const Register: React.FC = () => {
+    const history = useHistory();
     const [image, setImage] = useState<any>();
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -34,7 +37,9 @@ const Register: React.FC = () => {
             data.append('email', email);
             data.append('password', password);
 
-            console.log(data);
+            await register(data);
+
+            history.push('/');
         }        
     }
 
