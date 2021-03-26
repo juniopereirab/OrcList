@@ -4,6 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import {userRouter} from './routes/user.routes';
 import {listRouter} from './routes/list.routes';
+import path from 'path';
 
 const app = express();
 
@@ -24,6 +25,7 @@ mongoose.connect(`mongodb://orclist_db:27017/Orclist`, {
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resized')))
 app.use(userRouter);
 app.use(listRouter);
 

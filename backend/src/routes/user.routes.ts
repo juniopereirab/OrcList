@@ -3,9 +3,14 @@ import { User } from '../schema/User.schema';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import {secret} from '../config/auth.json';
+import sharp from 'sharp';
+import path from 'path';
+import fs from 'fs';
+import uploads from '../config/upload';
 
 
 const userRouter = Router();
+
 
 userRouter.get('/users', async (req: Request, res:Response): Promise<Response> => {
     try {
@@ -33,14 +38,30 @@ userRouter.get('/user/:id', async (req: Request, res: Response): Promise<Respons
     }
 })
 
-userRouter.post('/register', async (req: Request, res: Response): Promise<Response> => {
+userRouter.post('/register', uploads.single('image'), async (req: Request, res: Response): Promise<Response> => {
     const {email, name, password} = req.body
+    const {filename: image} = req.file;
+
+    const [imageName] = image.split('.');
+    const fileName = `${imageName}.jpg`;
+
     try {
         const user = await User.findOne({email});
+
+        await sharp(req.file.path)
+            .resize(500)
+            .withMetadata()
+            .jpeg({quality: 70})
+            .toFile(
+                path.resolve(req.file.destination, 'resized', fileName),
+            );
+
+        fs.unlinkSync(req.file.path);
+
         if(user){
             return res.status(400).json({error: "User already exists with this email address"});
         }
-        await User.create({email, name, password});        
+        await User.create({email, name, password, profile_pic: fileName});        
 
         return res.status(201).json({msg: "User created successfully"});
     }
