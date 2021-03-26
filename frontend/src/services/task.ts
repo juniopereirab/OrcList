@@ -9,3 +9,9 @@ export const createTask = async (userId: string, listId: string, title: string) 
 
     return response;
 }
+
+export const completeTask = async (taskId: string) => {
+    const response = await api.patch(`/completeTask/${taskId}`);
+
+    return response;
+}

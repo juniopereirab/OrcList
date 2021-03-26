@@ -65,7 +65,7 @@ listRouter.patch('/completeTask/:taskId', async (req: Request, res: Response): P
             return res.status(400).json({error: "Task not found"});
         }
 
-        await task.updateOne({done: true});
+        await task.updateOne({done: !task.done});
         
         return res.status(200).json({msg: "Task Completed. Well done!"});
     }

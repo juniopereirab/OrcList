@@ -10,7 +10,7 @@ import '../styles/Main.css';
 import CreateList from '../components/CreateListButton';
 import CreateListModal from '../components/CreateListModal';
 import CreateTaskInput from '../components/CreateTaskInput';
-import { createTask } from '../services/task';
+import { createTask, completeTask } from '../services/task';
 
 const Main: React.FC = () => {
     const [user] = useState<any>(getCurrentUser());
@@ -34,12 +34,14 @@ const Main: React.FC = () => {
 
     const handleCreateTask = async (e:any, listId: string) => {
         if(e.key === "Enter"){
-            console.log(user._id);
-            console.log(listId);
-            console.log(newTaskTitle);
             await createTask(user._id, listId, newTaskTitle);
             window.location.reload();
         }
+    }
+
+    const handleCompleteTask = async (taskId: string) => {
+        await completeTask(taskId);
+        window.location.reload();
     }
     
   return (
@@ -68,12 +70,18 @@ const Main: React.FC = () => {
                             placeholder="Crie uma nova tarefa"
                             value={newTaskTitle}
                             onChange={(e) => setNewTaskTitle(e.target.value)}
-                            onKeyPress={(e) => handleCreateTask(e, list._id)}    
+                            onKeyPress={(e) => handleCreateTask(e, list._id)} 
                         />
                     </div>
                     <div className="taskContainer">
                         { list.tasks.length > 0 ? list.tasks.map((task:any) => (
-                            <TaskCard key={task._id} title={task.title} description={task.description}/>
+                            <TaskCard 
+                                key={task._id} 
+                                title={task.title} 
+                                description={task.description}
+                                onClick={() => handleCompleteTask(task._id)}
+                                checked={task.done}
+                            />
                         )) : null}
                     </div>
                 </List>
