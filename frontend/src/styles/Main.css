@@ -6,7 +6,7 @@
 
 .mainHeader {
     width: 100vw;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -31,19 +31,20 @@
 
 .listContainer {
     display: inline-flex;
-    height: 70vh;
+    height: 65vh;
     position: relative;
     top: 30vh;
 }
 
 .listHeader {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 15px 0;
 }
 
 .listHeader .listHeaderButtons {
-    width: 7rem;
+    width: 2rem;
     display: flex;
     justify-content: space-around;
 }

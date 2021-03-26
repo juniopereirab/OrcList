@@ -7,7 +7,6 @@ export const login = async (email: string, password: string) => {
     });
     const {token} = response.data;
     const {user} = response.data;
-    console.log(user);
     if(token){
         localStorage.setItem("@orclist/user_token", JSON.stringify(token));
         localStorage.setItem("@orclist/user_info", JSON.stringify(user));
@@ -17,13 +16,11 @@ export const login = async (email: string, password: string) => {
 
 export const register = async (data: FormData) => {
     const response = await api.post('/register', data);
-    console.log(response);
     return response;
 }
 
 export const getCurrentUser = () => {
     const user: any = localStorage.getItem('@orclist/user_info');
-    console.log(JSON.parse(user));
     return JSON.parse(user);
 }
 
