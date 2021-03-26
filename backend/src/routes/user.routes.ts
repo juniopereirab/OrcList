@@ -3,9 +3,6 @@ import { User } from '../schema/User.schema';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import {secret} from '../config/auth.json';
-import sharp from 'sharp';
-import path from 'path';
-import fs from 'fs';
 import uploads from '../config/upload';
 
 
@@ -47,16 +44,6 @@ userRouter.post('/register', uploads.single('image'), async (req: Request, res: 
 
     try {
         const user = await User.findOne({email});
-
-        await sharp(req.file.path)
-            .resize(500)
-            .withMetadata()
-            .jpeg({quality: 70})
-            .toFile(
-                path.resolve(req.file.destination, 'resized', fileName),
-            );
-
-        fs.unlinkSync(req.file.path);
 
         if(user){
             return res.status(400).json({error: "User already exists with this email address"});

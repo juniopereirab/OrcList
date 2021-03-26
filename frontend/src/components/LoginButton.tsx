@@ -17,6 +17,7 @@ const Button = styled.button`
     &:hover {
         box-shadow: 1px 1px 5px rgba(0,0,0,.2);
         transition-duration: .2s;
+        transform: scale(0.95);
     }
     &:active {
         box-shadow: 1px 1px 5px rgba(0,0,0,.2);
